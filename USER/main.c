@@ -34,10 +34,15 @@ int main(void)
 	
 	while(1)
 	{
-		if (status==1)
+		if (status==0)
 		{
 			step1();     //直立状态下迈出右脚
-			step2();  
+			status = 1;
+		}
+		if(status==1)
+		{
+			step2();
+			step3();
 		}
 		if(Mk_Usart1All==1)
 		{

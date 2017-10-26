@@ -5,4 +5,5 @@
 
 void step1(void) ;
 void step2(void);
+void step3(void);
 #endif
