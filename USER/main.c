@@ -5,13 +5,13 @@
 #include "sys.h"
 #include "delay.h"
 #include "robot.h"
-u8 length;
-char RxBuffer[15];
-u8 RxCount;
+
+char RxBuffer[15];     //接收串口数据数组
+u8 RxCount;                //Index
 u8 pre_cnt_rs2=0; 	//数据标志
 u8 tim2_count;    		//定时器3计数标志
 u8 Mk_Usart1All=0;	//串口1接收一组数据完成标志
-u8 status;
+u8 status;                     //动作标志位
 
 int main(void)
 {
