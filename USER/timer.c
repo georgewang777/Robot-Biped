@@ -1,6 +1,7 @@
 #include "timer.h"
 #include "usart.h"
 
+extern u8 Pulse1,Pulse2,Pulse3,Pulse4;
 //通用定时器3中断初始化
 //arr：自动重装值。
 //psc：时钟预分频数
@@ -58,25 +59,25 @@ void TIM3_PWM_Init(u16 arr,u16 psc)
 	//TIM3_CH1 PA6
 	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1; 
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; //比较输出使能
-	TIM_OCInitStructure.TIM_Pulse = 140; //
+	TIM_OCInitStructure.TIM_Pulse = Pulse1; //
 	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High; //TIM输出极性高
 	TIM_OC1Init(TIM3, &TIM_OCInitStructure); 
 	
 	//TIM3_CH2  PA7
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; //比较输出使能
-	TIM_OCInitStructure.TIM_Pulse = 135; //
+	TIM_OCInitStructure.TIM_Pulse = Pulse2; //
 	TIM_OC2Init(TIM3, &TIM_OCInitStructure); 
 	TIM_OC2PreloadConfig(TIM3, TIM_OCPreload_Enable);
 	
 	//TIM3_CH3   PB0
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; //比较输出使能
-	TIM_OCInitStructure.TIM_Pulse = 150; //
+	TIM_OCInitStructure.TIM_Pulse = Pulse3; //
 	TIM_OC3Init(TIM3, &TIM_OCInitStructure); 
 	TIM_OC3PreloadConfig(TIM3, TIM_OCPreload_Enable);
 	
 	//TIM3_CH4   PB1
 	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable; 	//比较输出使能
-	TIM_OCInitStructure.TIM_Pulse = 130; //
+	TIM_OCInitStructure.TIM_Pulse = Pulse4; //
 	TIM_OC4Init(TIM3, &TIM_OCInitStructure); 
 	TIM_OC4PreloadConfig(TIM3, TIM_OCPreload_Enable);   					 //CH4预装载使能
 	

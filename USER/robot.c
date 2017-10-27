@@ -1,106 +1,60 @@
 #include "robot.h"
 #include "timer.h"
 #include "delay.h"
-
+#include "usart.h"
 u8 i=0;
 u8 zhenzhen = 200;
-//直立状态下迈出右脚
-void step1()    
-{
-	for(i=0;i<6;i++)    //抬右脚
-	{
-		Servo4(130-6*i); 
-		//delay_ms(30);
-	}
-	delay_ms(zhenzhen);
-	for(i=0;i<6;i++)   //立左脚
-	{
-		Servo3(150-6*i); 
-		//delay_ms(30);
-	}
-	delay_ms(zhenzhen);
+u8 tim1 =10;
+extern u8 Pulse1,Pulse2,Pulse3,Pulse4;
 
-	Servo2(135-6*i);  //转右脚
-	delay_ms(zhenzhen);
-	Servo1(140-30); 
-	delay_ms(zhenzhen);
-	for(i=0;i<6;i++)    //收左脚
-	{
-		Servo3(120+6*i); 
-		delay_ms(30);
-	}
-	delay_ms(zhenzhen);
-	for(i=0;i<6;i++)  //放右脚
-	{
-		Servo4(100+6*i); 
-		delay_ms(30);
-	}
-	delay_ms(zhenzhen);
-}
-//右脚在前，左脚在后状态下迈出左脚
-void step2()
+/*************************************
+----dir:0 顺时针-------
+----dir:1 逆时针-------
+************************************/
+void Servo4_pos(u8 dir,u8 angle)
 {
-	
-	for(i=0;i<6;i++)  //抬左脚
+	for(i=0;i<angle;i++)
 	{
-		Servo3(150+6*i); 
-	//	delay_ms(30);
+		if(dir==0) {Pulse4 = Pulse4 -1;}
+		else {Pulse4 = Pulse4 +1;}
+		Servo4(Pulse4);
+		delay_ms(tim1);
 	}
-	delay_ms(zhenzhen);
-	for(i=0;i<6;i++)  //立右脚
-	{
-		Servo4(130+6*i); 
-	//	delay_ms(30);
-	}
-	delay_ms(zhenzhen);
-	Servo1(110+50); 
-	delay_ms(zhenzhen);
+}
 
-	Servo2(105+50);  //转右脚
-	delay_ms(zhenzhen);
-	for(i=0;i<6;i++)    //收右脚
-	{
-		Servo4(160-6*i); 
-	    delay_ms(30);
-	}
-	delay_ms(zhenzhen);
-	for(i=0;i<6;i++)  //收左脚
-	{
-		Servo3(180-6*i); 
-		delay_ms(30);
-	}
-	delay_ms(zhenzhen);
-}
-//左脚在前右脚在后
-void step3(void)
+void Servo3_pos(u8 dir,u8 angle)
 {
-	for(i=0;i<6;i++)    //抬右脚
+	for(i=0;i<angle;i++)
 	{
-		Servo4(130-6*i); 
-		//delay_ms(30);
+		if(dir==0) {Pulse3 = Pulse3 - 1;}
+		else {Pulse3 = Pulse3 +1;}
+		Servo3(Pulse3);
+		delay_ms(tim1);
 	}
-	delay_ms(zhenzhen);
-	for(i=0;i<6;i++)   //立左脚
-	{
-		Servo3(150-6*i); 
-		//delay_ms(30);
-	}
-	delay_ms(zhenzhen);
-	Servo2(155-50); //转右脚
-	delay_ms(zhenzhen);
-	
-	Servo1(160-50);  //转左脚
-	delay_ms(zhenzhen);
-	for(i=0;i<6;i++)    //收左脚
-	{
-		Servo3(120+6*i); 
-		delay_ms(30);
-	}
-	delay_ms(zhenzhen);
-	for(i=0;i<6;i++)  //放右脚
-	{
-		Servo4(100+6*i); 
-		delay_ms(30);
-	}
-	delay_ms(zhenzhen);
+	printf("beauty:%d",Pulse3);
 }
+
+void Servo2_pos(u8 dir,u8 angle)
+{
+	for(i=0;i<angle;i++)
+	{
+		if(dir==0) {Pulse2 = Pulse2 + 1;}
+		else {Pulse2 = Pulse2 -1;}
+		Servo2(Pulse2);
+		delay_ms(tim1);
+	}
+	printf("beauty:%d",Pulse2);
+}
+
+void Servo1_pos(u8 dir,u8 angle)
+{
+	for(i=0;i<angle;i++)
+	{
+		if(dir==0) {Pulse1 = Pulse1 + 1;}
+		else {Pulse1 = Pulse1 -1;}
+		Servo1(Pulse1);
+		delay_ms(tim1);
+	}
+	printf("beauty:%d",Pulse1);
+}
+
