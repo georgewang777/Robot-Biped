@@ -19,3 +19,5 @@
 ..\output\robot.o: ..\FWlib\inc\misc.h
 ..\output\robot.o: timer.h
 ..\output\robot.o: ..\SYSTEM\delay\delay.h
+..\output\robot.o: ..\SYSTEM\usart\usart.h
+..\output\robot.o: C:\Users\George\Documents\ARM\ARMCC\Bin\..\include\stdio.h

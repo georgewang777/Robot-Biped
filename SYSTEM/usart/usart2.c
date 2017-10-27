@@ -88,19 +88,7 @@ void WriteUart2Buff(char ch)
 		RxCount=0;
 	}
 }
-//串口数据解析
-void UsartRace_Data(void)
-{
-	if(!(strcmp_str(RxBuffer,"up",2)))
-	{
-		status = 1;
-	}
-	else
-	{
-		status = 0;
-	}
-		
-}
+
 void USART2_IRQHandler(void)                	//串口1中断服务程序
 {
 	if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)  //接收中断(接收到的数据必须是0x0d 0x0a结尾)
