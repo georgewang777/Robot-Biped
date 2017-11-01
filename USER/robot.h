@@ -12,4 +12,15 @@ void Servo3_pos(u8 dir,u8 angle);
 
 void Servo4_pos(u8 dir,u8 angle);
 
+void Forward(void);
+
+void Back(void);
+
+void  Dance(void);
+
+void shake(void);
+
+void Turn_Right(void);
+
+void Turn_Left(void);
 #endif

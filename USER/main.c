@@ -5,6 +5,7 @@
 #include "sys.h"
 #include "delay.h"
 #include "robot.h"
+
 char RxBuffer[15];     //接收串口数据数组
 u8 RxCount;                //Index
 u8 pre_cnt_rs2=0;      //数据标志
@@ -16,11 +17,31 @@ u8 angle4,dir4;
 //串口数据解析
 void UsartRace_Data(void)
 {
-	if(!(strcmp_str(RxBuffer,"pei",3)))
+	if(!(strcmp_str(RxBuffer,"Forward",6)))  //前进
 	{
 		status = 1;
-		angle4 = (RxBuffer[4]-'0')*10 + (RxBuffer[5]-'0');
-		dir4 = RxBuffer[3]-'0';
+		//angle4 = (RxBuffer[4]-'0')*10 + (RxBuffer[5]-'0');
+		//dir4 = RxBuffer[3]-'0';
+	}
+	else if(!(strcmp_str(RxBuffer,"Dance",5)))   //跳舞
+	{
+		status =2;
+	}
+	else if(!(strcmp_str(RxBuffer,"Shake",5)))   // 转脚
+	{
+		status =3;
+	}
+	else if(!(strcmp_str(RxBuffer,"Right",5)))   // 右转
+	{
+		status =4;
+	}
+	else if(!(strcmp_str(RxBuffer,"Left",4)))   // 左转
+	{
+		status =5;
+	}
+	else if(!(strcmp_str(RxBuffer,"Back",4)))   // 后退
+	{
+		status =6;
 	}
 	else
 	{
@@ -28,16 +49,16 @@ void UsartRace_Data(void)
 	}
 		
 }
+
 int main(void)
 {
-	u8 j;
 	SystemInit();  //配置系统时钟为72M
 	delay_init(72);	    	 //延时函数初始化	  
 	NVIC_Configuration();
 	uart_init(115200);
 	uart2_init(115200);
 	Pulse1 = 140;
-	Pulse2 = 135;
+	Pulse2 = 130;
 	Pulse3 = 150;
 	Pulse4 = 130;
    TIM2_Int_Init(50-1,7200-1);          //定时器时钟72M，分频系数7200，所以72M/7200=10Khz的计数频率，计数50次为5ms  
@@ -48,17 +69,36 @@ int main(void)
 		
 		if (status==1)
 		{
-			printf("dir:%d,angle:%d\r\n",dir4,angle4);
-			for(j=0;j<20;j++)
-			{
-				Servo3_pos(1,30);
-				Servo4_pos(0,30);
-				delay_ms(100);
-				Servo3_pos(0,30);
-				Servo4_pos(1,30);
-			}
-			//printf("zhenzhen:%d\r\n",Pulse4);
+			printf("yulinjun\r\n");
+			Forward();
 			status = 0;
+		}
+		if(status==2)
+		{
+			Dance();
+			delay_ms(500);
+			shake();
+			status = 0 ;
+		}
+		if(status == 3)
+		{
+			shake();
+			status = 0;
+		}
+		if(status ==4)
+		{
+		   Turn_Right();
+			status  = 0 ;
+		}
+		if(status  ==5)
+		{
+			Turn_Left();
+			status = 0;
+		}
+		if(status==6)
+		{
+			Back();
+			status  = 0;
 		}
 		if(Mk_Usart1All==1)
 		{
