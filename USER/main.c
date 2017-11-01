@@ -39,6 +39,10 @@ void UsartRace_Data(void)
 	{
 		status =5;
 	}
+	else if(!(strcmp_str(RxBuffer,"Back",4)))   // ºóÍË
+	{
+		status =6;
+	}
 	else
 	{
 		status = 0;
@@ -72,6 +76,8 @@ int main(void)
 		if(status==2)
 		{
 			Dance();
+			delay_ms(500);
+			shake();
 			status = 0 ;
 		}
 		if(status == 3)
@@ -88,6 +94,11 @@ int main(void)
 		{
 			Turn_Left();
 			status = 0;
+		}
+		if(status==6)
+		{
+			Back();
+			status  = 0;
 		}
 		if(Mk_Usart1All==1)
 		{
