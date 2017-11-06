@@ -5,6 +5,7 @@
 #include "sys.h"
 #include "delay.h"
 #include "robot.h"
+#include "step.h"
 
 char RxBuffer[15];     //接收串口数据数组
 u8 RxCount;                //Index
@@ -47,7 +48,6 @@ void UsartRace_Data(void)
 	{
 		status = 0;
 	}
-		
 }
 
 int main(void)
@@ -63,50 +63,61 @@ int main(void)
 	Pulse4 = 130;
    TIM2_Int_Init(50-1,7200-1);          //定时器时钟72M，分频系数7200，所以72M/7200=10Khz的计数频率，计数50次为5ms  
    TIM3_PWM_Init(2000-1,720-1);      //72M/720=100k的计数频率，自动重装载为2000，那么PWM频率为100k/2000=50HZ，周期为20ms
-	
+	Step_Motor_GPIO_Init();
 	while(1)
 	{
-		
-		if (status==1)
-		{
-			printf("yulinjun\r\n");
-			Forward();
-			status = 0;
-		}
-		if(status==2)
-		{
-			Dance();
-			delay_ms(500);
-			shake();
-			status = 0 ;
-		}
-		if(status == 3)
-		{
-			shake();
-			status = 0;
-		}
-		if(status ==4)
-		{
-		   Turn_Right();
-			status  = 0 ;
-		}
-		if(status  ==5)
-		{
-			Turn_Left();
-			status = 0;
-		}
-		if(status==6)
-		{
-			Back();
-			status  = 0;
-		}
-		if(Mk_Usart1All==1)
-		{
-			Mk_Usart1All=0;
-			RxCount=0;
-			UsartRace_Data();
-			ClearUart2();
-		}
+//		for(i = 0;i<500;i++)
+//		{
+//			Motorcw();
+//		}
+//		MotorStop();
+//		delay_ms(500);
+//		for(i = 0;i<500;i++)
+//		{
+//			Motorccw();
+//		}
+//		MotorStop();
+//		delay_ms(500);
+//		if (status==1)
+//		{
+//			printf("yulinjun\r\n");
+//			Forward();
+//			status = 0;
+//		}
+//		if(status==2)
+//		{
+//			Dance();
+//			delay_ms(500);
+//			shake();
+//			status = 0 ;
+//		}
+//		if(status == 3)
+//		{
+//			shake();
+//			status = 0;
+//		}
+//		if(status ==4)
+//		{
+//		   Turn_Right();
+//			status  = 0 ;
+//		}
+//		if(status  ==5)
+//		{
+//			Turn_Left();
+//			status = 0;
+//		}
+//		if(status==6)
+//		{
+//			Back();
+//			status  = 0;
+//		}
+//		if(Mk_Usart1All==1)
+//		{
+//			Mk_Usart1All=0;
+//			RxCount=0;
+//			UsartRace_Data();
+//			ClearUart2();
+//		}
 	}
 }
 

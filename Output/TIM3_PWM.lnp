@@ -5,6 +5,7 @@
 "..\output\timer.o"
 "..\output\watchdog.o"
 "..\output\robot.o"
+"..\output\step.o"
 "..\output\misc.o"
 "..\output\stm32f10x_tim.o"
 "..\output\stm32f10x_gpio.o"

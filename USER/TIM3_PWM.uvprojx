@@ -451,6 +451,11 @@
               <FileType>1</FileType>
               <FilePath>.\robot.c</FilePath>
             </File>
+            <File>
+              <FileName>step.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\step.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

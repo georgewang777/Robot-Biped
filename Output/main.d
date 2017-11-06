@@ -23,3 +23,4 @@
 ..\output\main.o: ..\SYSTEM\sys\sys.h
 ..\output\main.o: ..\SYSTEM\delay\delay.h
 ..\output\main.o: robot.h
+..\output\main.o: step.h
