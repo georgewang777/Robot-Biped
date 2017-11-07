@@ -373,7 +373,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F10X_MD</Define>
               <Undefine></Undefine>
-              <IncludePath>..\FWlib\inc;..\USER;..\CMSIS;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\SYSTEM\seek</IncludePath>
+              <IncludePath>..\FWlib\inc;..\USER;..\CMSIS;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\SYSTEM\seek;..\SYSTEM\tm1624;..\SYSTEM\stepper;..\SYSTEM\digit_servo</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -452,9 +452,9 @@
               <FilePath>.\robot.c</FilePath>
             </File>
             <File>
-              <FileName>step.c</FileName>
+              <FileName>george_system.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\step.c</FilePath>
+              <FilePath>.\george_system.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -545,6 +545,21 @@
               <FileName>usart2.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\SYSTEM\usart\usart2.c</FilePath>
+            </File>
+            <File>
+              <FileName>tm1624.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\tm1624\tm1624.c</FilePath>
+            </File>
+            <File>
+              <FileName>stepper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\stepper\stepper.c</FilePath>
+            </File>
+            <File>
+              <FileName>servo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\SYSTEM\digit_servo\servo.c</FilePath>
             </File>
           </Files>
         </Group>

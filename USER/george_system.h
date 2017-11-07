@@ -7,8 +7,11 @@
 #include "usart2.h"
 #include "sys.h"
 #include "delay.h"
-#include "robot.h"
-#include "step.h"
+#include "servo.h"
+#include "stepper.h"
 #include "tm1624.h"
+#include "robot.h"
+
+void Init(void);
 
 #endif

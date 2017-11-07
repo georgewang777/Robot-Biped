@@ -23,6 +23,7 @@
 ..\output\main.o: ..\SYSTEM\usart\usart2.h
 ..\output\main.o: ..\SYSTEM\sys\sys.h
 ..\output\main.o: ..\SYSTEM\delay\delay.h
-..\output\main.o: robot.h
-..\output\main.o: step.h
+..\output\main.o: ..\SYSTEM\digit_servo\servo.h
+..\output\main.o: ..\SYSTEM\stepper\stepper.h
 ..\output\main.o: ..\SYSTEM\tm1624\tm1624.h
+..\output\main.o: robot.h

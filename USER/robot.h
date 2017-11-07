@@ -1,26 +1,16 @@
-#ifndef   __ROBOT_H
-#define	__ROBOT_H
+#ifndef __ROBOT_H
+#define __ROBOT_H
 
-#include "stm32f10x.h"
-
-
-void Servo1_pos(u8 dir,u8 angle);
-
-void Servo2_pos(u8 dir,u8 angle);
-
-void Servo3_pos(u8 dir,u8 angle);
-
-void Servo4_pos(u8 dir,u8 angle);
-
-void Forward(void);
-
-void Back(void);
+#include "servo.h"
+#include "delay.h"
+#define n 1
 
 void  Dance(void);
-
+void Forward(void);
+void Back(void);
 void shake(void);
-
 void Turn_Right(void);
-
 void Turn_Left(void);
+
 #endif
+

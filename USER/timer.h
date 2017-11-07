@@ -14,9 +14,6 @@ void TIM3_config(u32 PulseNum);
 void Pulse_output(u32 Cycle,u32 PulseNum);
 void Scan_back(u32 Cycle);
 
-void Servo1(u32 compare);
-void Servo2(u32 compare);
-void Servo3(u32 compare);
-void Servo4(u32 compare);
+
 #endif /* __PWM_OUTPUT_H */
 
