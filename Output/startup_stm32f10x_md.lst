@@ -460,12 +460,11 @@ ARM Macro Assembler    Page 8
 
 
 ork --depend=..\output\startup_stm32f10x_md.d -o..\output\startup_stm32f10x_md.
-o -IC:\Users\George\Desktop\Robot\Robot-Biped\USER\RTE -IC:\Users\George\Docume
-nts\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\Include -IC:\Users\George\Documents\ARM\PACK
-\Keil\STM32F1xx_DFP\2.0.0\Device\Include --predefine="__MICROLIB SETA 1" --pred
-efine="__UVISION_VERSION SETA 516" --predefine="_RTE_ SETA 1" --predefine="STM3
-2F10X_MD SETA 1" --list=..\output\startup_stm32f10x_md.lst ..\CMSIS\startup\sta
-rtup_stm32f10x_md.s
+o -IG:\Robot-Biped\USER\RTE -ID:\keil\ARM\PACK\ARM\CMSIS\4.4.0\CMSIS\Include -I
+D:\keil\ARM\PACK\Keil\STM32F1xx_DFP\2.0.0\Device\Include --predefine="__MICROLI
+B SETA 1" --predefine="__UVISION_VERSION SETA 516" --predefine="_RTE_ SETA 1" -
+-predefine="STM32F10X_MD SETA 1" --list=..\output\startup_stm32f10x_md.lst ..\C
+MSIS\startup\startup_stm32f10x_md.s
 
 
 

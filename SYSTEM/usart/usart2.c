@@ -121,3 +121,38 @@ int strcmp_str(char *str1,char *str2,int count)
 	}
 	return -1;
 }
+
+//串口数据解析
+void UsartRace_Data(void)
+{
+	if(!(strcmp_str(RxBuffer,"Forward",6)))  //前进
+	{
+		status = 1;
+		//angle4 = (RxBuffer[4]-'0')*10 + (RxBuffer[5]-'0');
+		//dir4 = RxBuffer[3]-'0';
+	}
+	else if(!(strcmp_str(RxBuffer,"Dance",5)))   //跳舞
+	{
+		status =2;
+	}
+	else if(!(strcmp_str(RxBuffer,"Shake",5)))   // 转脚
+	{
+		status =3;
+	}
+	else if(!(strcmp_str(RxBuffer,"Right",5)))   // 右转
+	{
+		status =4;
+	}
+	else if(!(strcmp_str(RxBuffer,"Left",4)))   // 左转
+	{
+		status =5;
+	}
+	else if(!(strcmp_str(RxBuffer,"Back",4)))   // 后退
+	{
+		status =6;
+	}
+	else
+	{
+		status = 0;
+	}
+}

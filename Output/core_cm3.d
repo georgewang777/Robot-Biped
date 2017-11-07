@@ -1,2 +1,2 @@
 ..\output\core_cm3.o: ..\CMSIS\core_cm3.c
-..\output\core_cm3.o: C:\Users\George\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\core_cm3.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h

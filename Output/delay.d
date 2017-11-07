@@ -2,7 +2,7 @@
 ..\output\delay.o: ..\SYSTEM\delay\delay.h
 ..\output\delay.o: ..\CMSIS\stm32f10x.h
 ..\output\delay.o: ..\CMSIS\core_cm3.h
-..\output\delay.o: C:\Users\George\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\delay.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\delay.o: ..\CMSIS\system_stm32f10x.h
 ..\output\delay.o: ..\USER\stm32f10x_conf.h
 ..\output\delay.o: ..\FWlib\inc\stm32f10x_adc.h

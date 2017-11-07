@@ -2,7 +2,7 @@
 ..\output\seek.o: ..\SYSTEM\seek\seek.h
 ..\output\seek.o: ..\CMSIS\stm32f10x.h
 ..\output\seek.o: ..\CMSIS\core_cm3.h
-..\output\seek.o: C:\Users\George\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\seek.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\seek.o: ..\CMSIS\system_stm32f10x.h
 ..\output\seek.o: ..\USER\stm32f10x_conf.h
 ..\output\seek.o: ..\FWlib\inc\stm32f10x_adc.h

@@ -1,54 +1,12 @@
-#include "stm32f10x.h"
-#include "timer.h"
-#include "usart.h"
-#include "usart2.h"
-#include "sys.h"
-#include "delay.h"
-#include "robot.h"
-#include "step.h"
+#include "george_system.h"
 
 char RxBuffer[15];     //接收串口数据数组
-u8 RxCount;                //Index
-u8 pre_cnt_rs2=0;      //数据标志
-u8 tim2_count;    		 //定时器3计数标志
+u8 RxCount;           //Index
+u8 pre_cnt_rs2=0;    //数据标志
+u8 tim2_count;    	//定时器3计数标志
 u8 Mk_Usart1All=0;	 //串口1接收一组数据完成标志
-u8 status;                    //动作标志位
+u8 status;           //动作标志位
 u8 Pulse1,Pulse2,Pulse3,Pulse4;
-u8 angle4,dir4;
-//串口数据解析
-void UsartRace_Data(void)
-{
-	if(!(strcmp_str(RxBuffer,"Forward",6)))  //前进
-	{
-		status = 1;
-		//angle4 = (RxBuffer[4]-'0')*10 + (RxBuffer[5]-'0');
-		//dir4 = RxBuffer[3]-'0';
-	}
-	else if(!(strcmp_str(RxBuffer,"Dance",5)))   //跳舞
-	{
-		status =2;
-	}
-	else if(!(strcmp_str(RxBuffer,"Shake",5)))   // 转脚
-	{
-		status =3;
-	}
-	else if(!(strcmp_str(RxBuffer,"Right",5)))   // 右转
-	{
-		status =4;
-	}
-	else if(!(strcmp_str(RxBuffer,"Left",4)))   // 左转
-	{
-		status =5;
-	}
-	else if(!(strcmp_str(RxBuffer,"Back",4)))   // 后退
-	{
-		status =6;
-	}
-	else
-	{
-		status = 0;
-	}
-}
 
 int main(void)
 {
@@ -61,9 +19,11 @@ int main(void)
 	Pulse2 = 130;
 	Pulse3 = 150;
 	Pulse4 = 130;
-   TIM2_Int_Init(50-1,7200-1);          //定时器时钟72M，分频系数7200，所以72M/7200=10Khz的计数频率，计数50次为5ms  
-   TIM3_PWM_Init(2000-1,720-1);      //72M/720=100k的计数频率，自动重装载为2000，那么PWM频率为100k/2000=50HZ，周期为20ms
+  TIM2_Int_Init(50-1,7200-1);        //定时器时钟72M，分频系数7200，所以72M/7200=10Khz的计数频率，计数50次为5ms  
+  TIM3_PWM_Init(2000-1,720-1);      //72M/720=100k的计数频率，自动重装载为2000，那么PWM频率为100k/2000=50HZ，周期为20ms
 	Step_Motor_GPIO_Init();
+	Tm1624_Init();
+	Tm1624_Dispaly();
 	while(1)
 	{
 //		for(i = 0;i<500;i++)

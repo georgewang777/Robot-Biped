@@ -2,7 +2,7 @@
 ..\output\usart.o: ..\SYSTEM\sys\sys.h
 ..\output\usart.o: ..\CMSIS\stm32f10x.h
 ..\output\usart.o: ..\CMSIS\core_cm3.h
-..\output\usart.o: C:\Users\George\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\usart.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\usart.o: ..\CMSIS\system_stm32f10x.h
 ..\output\usart.o: ..\USER\stm32f10x_conf.h
 ..\output\usart.o: ..\FWlib\inc\stm32f10x_adc.h
@@ -18,4 +18,4 @@
 ..\output\usart.o: ..\FWlib\inc\stm32f10x_usart.h
 ..\output\usart.o: ..\FWlib\inc\misc.h
 ..\output\usart.o: ..\SYSTEM\usart\usart.h
-..\output\usart.o: C:\Users\George\Documents\ARM\ARMCC\Bin\..\include\stdio.h
+..\output\usart.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h

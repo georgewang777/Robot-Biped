@@ -2,7 +2,7 @@
 ..\output\watchdog.o: watchdog.h
 ..\output\watchdog.o: ..\CMSIS\stm32f10x.h
 ..\output\watchdog.o: ..\CMSIS\core_cm3.h
-..\output\watchdog.o: C:\Users\George\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\watchdog.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\watchdog.o: ..\CMSIS\system_stm32f10x.h
 ..\output\watchdog.o: ..\USER\stm32f10x_conf.h
 ..\output\watchdog.o: ..\FWlib\inc\stm32f10x_adc.h

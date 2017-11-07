@@ -2,7 +2,7 @@
 ..\output\step.o: ..\SYSTEM\sys\sys.h
 ..\output\step.o: ..\CMSIS\stm32f10x.h
 ..\output\step.o: ..\CMSIS\core_cm3.h
-..\output\step.o: C:\Users\George\Documents\ARM\ARMCC\Bin\..\include\stdint.h
+..\output\step.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 ..\output\step.o: ..\CMSIS\system_stm32f10x.h
 ..\output\step.o: ..\USER\stm32f10x_conf.h
 ..\output\step.o: ..\FWlib\inc\stm32f10x_adc.h
