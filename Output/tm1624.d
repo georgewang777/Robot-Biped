@@ -1,5 +1,5 @@
-..\output\tm1624.o: ..\SYSTEM\tm1624\tm1624.c
-..\output\tm1624.o: ..\SYSTEM\tm1624\tm1624.h
+..\output\tm1624.o: ..\HARDWARE\tm1624\tm1624.c
+..\output\tm1624.o: ..\HARDWARE\tm1624\tm1624.h
 ..\output\tm1624.o: ..\CMSIS\stm32f10x.h
 ..\output\tm1624.o: ..\CMSIS\core_cm3.h
 ..\output\tm1624.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h

@@ -21,16 +21,15 @@ void process(void)
 int main(void)
 {
 	Init(); //System Init
-	Tm1624_Dispaly();
-	Head_Action();
 	while(1)
 	{	
-		if(Mk_UsartAll==1)
+		Tm1624_Dispaly();  //灯光效果
+		if(Mk_UsartAll==1) //接收到数据
 		{
 			Mk_UsartAll=0;
 			RxCount=0;
-			UsartRace_Data();
-			process();
+			UsartRace_Data();//处理接收到的数据
+			process();       //机器人动作
 			ClearUart2();
 		}
 	}

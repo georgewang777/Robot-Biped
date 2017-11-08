@@ -58,21 +58,23 @@ void Tm1624_Init(void)
 	Write_Com(0x40);    //设置数据命令，采用地址自动加一模式
 	Clear_TM1624();    
 	Write_Com(0x44);    //固定地址
+	delay_ms(100);
 }
 
 void Tm1624_Dispaly(void)
 {
-	STB_L;
-	TM1624_Write(0xC0);
-	TM1624_Write(0xff);
-	STB_H;
-	delay_ms(1000);
-	STB_L;
-	TM1624_Write(0xC2);
-	TM1624_Write(0xff);
-	STB_H;
-	delay_ms(1000);
-	STB_L;
-	TM1624_Write(0xC4);
-	TM1624_Write(0xff);
+	u8 i,j;
+	u16 k= 200;
+	for(j=0;j<8;j++)
+	{
+		STB_L;
+		TM1624_Write(0xc0+2*j);              
+		for(i=0;i<9;i++)
+		{
+			TM1624_Write(1<<i);
+			delay_ms(k);
+		}	
+		STB_H;
+		delay_ms(20);
+	}
 }

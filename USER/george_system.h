@@ -11,6 +11,7 @@
 #include "stepper.h"
 #include "tm1624.h"
 #include "robot.h"
+#include "wkup.h"
 
 void Init(void);
 

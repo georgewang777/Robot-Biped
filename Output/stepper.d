@@ -1,4 +1,4 @@
-..\output\stepper.o: ..\SYSTEM\stepper\stepper.c
+..\output\stepper.o: ..\HARDWARE\stepper\stepper.c
 ..\output\stepper.o: ..\SYSTEM\sys\sys.h
 ..\output\stepper.o: ..\CMSIS\stm32f10x.h
 ..\output\stepper.o: ..\CMSIS\core_cm3.h
@@ -18,4 +18,4 @@
 ..\output\stepper.o: ..\FWlib\inc\stm32f10x_usart.h
 ..\output\stepper.o: ..\FWlib\inc\misc.h
 ..\output\stepper.o: ..\SYSTEM\delay\delay.h
-..\output\stepper.o: ..\SYSTEM\stepper\stepper.h
+..\output\stepper.o: ..\HARDWARE\stepper\stepper.h

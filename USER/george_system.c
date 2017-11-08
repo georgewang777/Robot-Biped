@@ -16,4 +16,5 @@ void Init(void)
   Servo_Init();  
 	Step_Motor_GPIO_Init();
 	Tm1624_Init();
+	WKUP_Init();              //´ý»ú»½ÐÑ
 }

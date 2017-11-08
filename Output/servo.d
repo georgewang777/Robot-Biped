@@ -1,5 +1,5 @@
-..\output\servo.o: ..\SYSTEM\digit_servo\servo.c
-..\output\servo.o: ..\SYSTEM\digit_servo\servo.h
+..\output\servo.o: ..\HARDWARE\digit_servo\servo.c
+..\output\servo.o: ..\HARDWARE\digit_servo\servo.h
 ..\output\servo.o: ..\CMSIS\stm32f10x.h
 ..\output\servo.o: ..\CMSIS\core_cm3.h
 ..\output\servo.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h

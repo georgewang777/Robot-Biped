@@ -23,7 +23,9 @@
 ..\output\george_system.o: ..\SYSTEM\usart\usart2.h
 ..\output\george_system.o: ..\SYSTEM\sys\sys.h
 ..\output\george_system.o: ..\SYSTEM\delay\delay.h
-..\output\george_system.o: ..\SYSTEM\digit_servo\servo.h
-..\output\george_system.o: ..\SYSTEM\stepper\stepper.h
-..\output\george_system.o: ..\SYSTEM\tm1624\tm1624.h
+..\output\george_system.o: ..\HARDWARE\digit_servo\servo.h
+..\output\george_system.o: ..\HARDWARE\stepper\stepper.h
+..\output\george_system.o: ..\HARDWARE\tm1624\tm1624.h
 ..\output\george_system.o: robot.h
+..\output\george_system.o: ..\SYSTEM\wakeup\wkup.h
+..\output\george_system.o: ..\FWlib\inc\stm32f10x_pwr.h

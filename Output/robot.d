@@ -1,6 +1,6 @@
 ..\output\robot.o: robot.c
 ..\output\robot.o: robot.h
-..\output\robot.o: ..\SYSTEM\digit_servo\servo.h
+..\output\robot.o: ..\HARDWARE\digit_servo\servo.h
 ..\output\robot.o: ..\CMSIS\stm32f10x.h
 ..\output\robot.o: ..\CMSIS\core_cm3.h
 ..\output\robot.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
@@ -18,5 +18,5 @@
 ..\output\robot.o: ..\FWlib\inc\stm32f10x_tim.h
 ..\output\robot.o: ..\FWlib\inc\stm32f10x_usart.h
 ..\output\robot.o: ..\FWlib\inc\misc.h
-..\output\robot.o: ..\SYSTEM\stepper\stepper.h
+..\output\robot.o: ..\HARDWARE\stepper\stepper.h
 ..\output\robot.o: ..\SYSTEM\delay\delay.h
