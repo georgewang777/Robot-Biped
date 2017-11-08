@@ -135,25 +135,33 @@ void SysTick_Handler(void)
 {
 }
 
-/******************************************************************************/
-/*                 STM32F10x Peripherals Interrupt Handlers                   */
-/*  Add here the Interrupt Handler for the used peripheral(s) (PPP), for the  */
-/*  available peripheral interrupt handler's name please refer to the startup */
-/*  file (startup_stm32f10x_xx.s).                                            */
-/******************************************************************************/
-
-/**
-  * @brief  This function handles PPP interrupt request.
-  * @param  None
-  * @retval : None
-  */
-/*void PPP_IRQHandler(void)
+u8 pre_cnt_rs2=0;    //数据标志
+u8 tim2_count;    	//定时器2计数标志
+extern u8 RxCount;   //Index
+extern u8 Mk_UsartAll;	 //串口接收一组数据完成标志
+//定时器3中断服务函数
+void TIM2_IRQHandler(void)
 {
-}*/
-
-/**
-  * @}
-  */ 
-
-
-/******************* (C) COPYRIGHT 2009 STMicroelectronics *****END OF FILE****/
+	if(TIM_GetITStatus(TIM2,TIM_IT_Update)==SET) //溢出中断
+	{
+		if(RxCount!=0)  //有数据接收
+		{
+			if(RxCount == pre_cnt_rs2)    //接收完成
+			{
+				tim2_count++;
+				if(tim2_count>=4)
+				{
+					  Mk_UsartAll=1;             //交给主函数处理
+					  tim2_count=0;
+				}
+			}
+			else
+			{
+				tim2_count = 0;
+				pre_cnt_rs2 = RxCount;
+			}
+		}
+		
+	}
+	TIM_ClearITPendingBit(TIM2,TIM_IT_Update);  //清除中断标志位
+}

@@ -17,7 +17,7 @@
 ..\output\main.o: ..\FWlib\inc\stm32f10x_tim.h
 ..\output\main.o: ..\FWlib\inc\stm32f10x_usart.h
 ..\output\main.o: ..\FWlib\inc\misc.h
-..\output\main.o: timer.h
+..\output\main.o: ..\SYSTEM\timer\timer.h
 ..\output\main.o: ..\SYSTEM\usart\usart.h
 ..\output\main.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
 ..\output\main.o: ..\SYSTEM\usart\usart2.h

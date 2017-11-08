@@ -1,5 +1,5 @@
-..\output\watchdog.o: watchdog.c
-..\output\watchdog.o: watchdog.h
+..\output\watchdog.o: ..\SYSTEM\watchdog\watchdog.c
+..\output\watchdog.o: ..\SYSTEM\watchdog\watchdog.h
 ..\output\watchdog.o: ..\CMSIS\stm32f10x.h
 ..\output\watchdog.o: ..\CMSIS\core_cm3.h
 ..\output\watchdog.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h

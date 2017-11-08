@@ -1,5 +1,5 @@
-..\output\timer.o: timer.c
-..\output\timer.o: timer.h
+..\output\timer.o: ..\SYSTEM\timer\timer.c
+..\output\timer.o: ..\SYSTEM\timer\timer.h
 ..\output\timer.o: ..\CMSIS\stm32f10x.h
 ..\output\timer.o: ..\CMSIS\core_cm3.h
 ..\output\timer.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
@@ -17,5 +17,3 @@
 ..\output\timer.o: ..\FWlib\inc\stm32f10x_tim.h
 ..\output\timer.o: ..\FWlib\inc\stm32f10x_usart.h
 ..\output\timer.o: ..\FWlib\inc\misc.h
-..\output\timer.o: ..\SYSTEM\usart\usart.h
-..\output\timer.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h

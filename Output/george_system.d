@@ -17,7 +17,7 @@
 ..\output\george_system.o: ..\FWlib\inc\stm32f10x_tim.h
 ..\output\george_system.o: ..\FWlib\inc\stm32f10x_usart.h
 ..\output\george_system.o: ..\FWlib\inc\misc.h
-..\output\george_system.o: timer.h
+..\output\george_system.o: ..\SYSTEM\timer\timer.h
 ..\output\george_system.o: ..\SYSTEM\usart\usart.h
 ..\output\george_system.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
 ..\output\george_system.o: ..\SYSTEM\usart\usart2.h

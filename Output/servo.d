@@ -17,7 +17,7 @@
 ..\output\servo.o: ..\FWlib\inc\stm32f10x_tim.h
 ..\output\servo.o: ..\FWlib\inc\stm32f10x_usart.h
 ..\output\servo.o: ..\FWlib\inc\misc.h
-..\output\servo.o: ..\USER\timer.h
+..\output\servo.o: ..\SYSTEM\timer\timer.h
 ..\output\servo.o: ..\SYSTEM\delay\delay.h
 ..\output\servo.o: ..\SYSTEM\usart\usart.h
 ..\output\servo.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h

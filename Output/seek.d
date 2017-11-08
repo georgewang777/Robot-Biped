@@ -17,5 +17,5 @@
 ..\output\seek.o: ..\FWlib\inc\stm32f10x_tim.h
 ..\output\seek.o: ..\FWlib\inc\stm32f10x_usart.h
 ..\output\seek.o: ..\FWlib\inc\misc.h
-..\output\seek.o: ..\USER\timer.h
+..\output\seek.o: ..\SYSTEM\timer\timer.h
 ..\output\seek.o: ..\SYSTEM\delay\delay.h

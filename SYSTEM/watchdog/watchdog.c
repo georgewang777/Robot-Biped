@@ -2,7 +2,8 @@
 /*****************************************************
 函数：       void IWDG_Init(void)
 用途：       独立看门狗初始化
- 返回值： 无
+返回值：     无
+说明：     stm32的独立看门狗由内部专门的40Khz低速时钟驱动
  ****************************************************/
 void IWDG_Init(void)
 {  
@@ -13,9 +14,9 @@ void IWDG_Init(void)
  //   IWDG_SetReload(625);                             //喂狗时间5s/6.4ms=781(不能大于0xfff)
     IWDG_SetReload(781); 
 
-    IWDG_ReloadCounter();                                                                    //喂狗
+    IWDG_ReloadCounter();                             //喂狗
 
-    IWDG_Enable();                                                                                       //使能狗狗
+    IWDG_Enable();                                   //使能狗狗
 }
 /*****************************************************
 函数：       void IWDG_Feed(void)

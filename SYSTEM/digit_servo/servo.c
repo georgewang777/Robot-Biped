@@ -12,7 +12,7 @@ Device:SR-1501 ËÄÂ·¶æ»ú
 u8 i=0;
 u8 zhenzhen = 200;
 u8 tim1 =10;
-extern u8 Pulse1,Pulse2,Pulse3,Pulse4;
+u8 Pulse1,Pulse2,Pulse3,Pulse4;
 
 void Servo_Init(void)
 {

@@ -61,7 +61,7 @@ void Forward(void)
 	Servo1_pos(0,20);
 	delay_ms(n);
 }
-void Back(void)
+void Backward(void)
 {
 	int k = 0;
 	Servo3_pos(1,30);
@@ -109,7 +109,7 @@ void Back(void)
 	Servo2_pos(0,20);
 	delay_ms(n);
 }
-void shake(void)
+void Shake(void)
 {
 	u8 k=0;
 	Servo4_pos(0,20);
@@ -209,4 +209,20 @@ void Turn_Left(void)
 		delay_ms(n);
 	}
 	
+}
+
+//机器人头部运动
+void Head_Action(void)
+{
+	u8 i;
+	motorNcircle(2,TRUE);
+	delay_ms(500);
+	for(i=0;i<10;i++)
+	{
+		motorNcircle(4,FALSE);
+		delay_ms(100);
+		motorNcircle(4,TRUE);
+		delay_ms(100);
+	}
+	motorNcircle(2,FALSE);
 }

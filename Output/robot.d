@@ -18,4 +18,5 @@
 ..\output\robot.o: ..\FWlib\inc\stm32f10x_tim.h
 ..\output\robot.o: ..\FWlib\inc\stm32f10x_usart.h
 ..\output\robot.o: ..\FWlib\inc\misc.h
+..\output\robot.o: ..\SYSTEM\stepper\stepper.h
 ..\output\robot.o: ..\SYSTEM\delay\delay.h

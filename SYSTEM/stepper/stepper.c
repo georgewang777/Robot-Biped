@@ -94,18 +94,4 @@ void motorNcircle(int n,bool position)
 		}
 	}
 }
-//机器人头部运动
-void Head_Action(void)
-{
-	u8 i;
-	motorNcircle(2,1);
-	delay_ms(500);
-	for(i=0;i<10;i++)
-	{
-		motorNcircle(4,0);
-		delay_ms(100);
-		motorNcircle(4,1);
-		delay_ms(100);
-	}
-	motorNcircle(2,0);
-}
+
